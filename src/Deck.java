@@ -3,6 +3,7 @@ import java.util.*;
 
 public class Deck {
 
+
     public Queue<Card> Cards = new LinkedList<Card>();
     public List<Card> lastHand;
 
@@ -47,14 +48,14 @@ public class Deck {
 
         for (int i =0;i<5;i++) {
             Card carta = Cards.poll();
-            Cards.remove(carta);
-            System.out.println(carta.ToString());
-            cartas[i] = carta;
+            if (carta!=null) {
+                Cards.remove(carta);
+                System.out.println(carta.ToString());
+                cartas[i] = carta;
+            }
         }
 
-        System.out.println("Quedan: "+Cards.size());
-
-        lastHand= Arrays.asList(cartas);
+        System.out.printf("Quedan: %d%n", Cards.size());
 
         return  cartas;
     }

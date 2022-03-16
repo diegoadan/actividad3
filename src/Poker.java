@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Poker {
 
@@ -8,9 +10,7 @@ public class Poker {
             deck.shuffle();
             deck.head();
             deck.pick();
-            deck.hand();
-
-
+            deck.lastHand= Arrays.asList(deck.hand());
 
 
 
